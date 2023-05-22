@@ -1,6 +1,7 @@
 package com.allstate_onboarding.hostel_system_spock.service;
 
 
+import com.allstate_onboarding.hostel_system_spock.exception.StudentNotFoundException;
 import com.allstate_onboarding.hostel_system_spock.model.Hostel;
 import com.allstate_onboarding.hostel_system_spock.model.Room;
 import com.allstate_onboarding.hostel_system_spock.model.Student;
@@ -24,8 +25,8 @@ public class StudentService {
         this.roomRepository = roomRepository;
     }
 
-    public Student getStudent(Integer integer) {
-        return studentRepository.findById(integer).orElseThrow();
+    public Student getStudent(Integer integer) throws StudentNotFoundException {
+        return studentRepository.findById(integer).orElseThrow(() -> new StudentNotFoundException(String.format("student with %s not found", integer)));
     }
 
     public void updateMonthlyExpensesFor(Integer id) {
