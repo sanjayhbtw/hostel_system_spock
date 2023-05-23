@@ -27,10 +27,10 @@ public class StudentController {
         return studentService.getStudent(id);
     }
 
-
-    @PatchMapping("/students/{id}/update_monthly_expense")
-    public Student updateMonthlyExpenseBasedOnHostelAndRoomAmenities(@PathVariable Integer id) throws StudentNotFoundException {
-        studentService.updateMonthlyExpensesFor(id);
-        return studentService.getStudent(id);
-    }
+//
+//    @PatchMapping("/students/{id}/update_monthly_expense")
+//    public Student updateMonthlyExpenseBasedOnHostelAndRoomAmenities(@PathVariable Integer id) throws StudentNotFoundException {
+//        studentService.updateMonthlyExpensesFor(id);
+//        return studentService.getStudent(id);
+//    }
 }
