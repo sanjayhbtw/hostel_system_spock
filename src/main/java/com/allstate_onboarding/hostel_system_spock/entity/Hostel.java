@@ -1,4 +1,4 @@
-package com.allstate_onboarding.hostel_system_spock.model;
+package com.allstate_onboarding.hostel_system_spock.entity;
 
 
 import jakarta.persistence.Column;
@@ -12,19 +12,22 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity(name = "student")
-@Table(name = "students")
+@Entity(name = "hostel")
+@Table(name = "hostels")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Student {
+public class Hostel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "name")
-    private String name;
+    @Column(name = "room_id")
+    private Integer roomId;
 
-    @Column(name = "total_monthly_expenses", columnDefinition = "integer default 0")
-    private Integer monthlyExpenses;
+    @Column(name = "student_id")
+    private Integer studentId;
+
+    @Column(name = "monthly_charges")
+    private Integer monthlyCharges;
 }

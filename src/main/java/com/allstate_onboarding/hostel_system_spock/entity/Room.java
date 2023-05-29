@@ -1,4 +1,4 @@
-package com.allstate_onboarding.hostel_system_spock.model;
+package com.allstate_onboarding.hostel_system_spock.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -35,4 +35,9 @@ public class Room {
 
     @Column(name = "mess_charges")
     private Integer messCharges;
+
+
+    public Integer getAllCharges() {
+        return occupancyCharges + roomCharges + powerBackupCharges + messCharges;
+    }
 }
