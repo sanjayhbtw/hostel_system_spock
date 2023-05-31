@@ -8,12 +8,15 @@ import com.allstate_onboarding.hostel_system_spock.repository.HostelRepository
 import com.allstate_onboarding.hostel_system_spock.repository.RoomRepository
 import com.allstate_onboarding.hostel_system_spock.repository.StudentRepository
 import spock.lang.Specification
+import spock.lang.Subject
 
 class StudentServiceSpec extends Specification {
     def "should get student when student with given id is present"() {
         Integer id = 1
         def expected = Optional.of(new Student(1, "joe", 0))
         def studentRepository = Mock(StudentRepository)
+
+        @Subject
         def service = new StudentService(studentRepository, Mock(HostelRepository), Mock(RoomRepository))
 
         when:
@@ -27,6 +30,8 @@ class StudentServiceSpec extends Specification {
     def "should throw an error if student with given id is not found"() {
         Integer id = 1
         def studentRepository = Mock(StudentRepository)
+
+        @Subject
         def service = new StudentService(studentRepository, Mock(HostelRepository), Mock(RoomRepository))
 
         when:
@@ -42,6 +47,8 @@ class StudentServiceSpec extends Specification {
         def studentRepository = Mock(StudentRepository)
         def hostelRepository = Mock(HostelRepository)
         def roomRepository = Mock(RoomRepository)
+
+        @Subject
         def service = new StudentService(studentRepository, hostelRepository, roomRepository)
 
         when:

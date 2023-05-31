@@ -1,0 +1,30 @@
+plugins {
+
+    id 'java'
+    id 'org.springframework.boot' version '3.1.0'
+    id 'io.spring.dependency-management' version '1.1.0'
+}
+
+repositories {
+    mavenLocal()
+    maven {
+        url = uri('https://repo.maven.apache.org/maven2/')
+    }
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web:3.0.0'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa:3.0.0'
+    implementation 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
+    implementation 'org.apache.groovy:groovy-all:4.0.5'
+    runtimeOnly 'com.h2database:h2:2.1.214'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test:3.0.0'
+    testImplementation 'org.spockframework:spock-core:2.3-groovy-4.0'
+    testImplementation 'org.spockframework:spock-junit4:2.3-groovy-4.0'
+    testImplementation 'org.spockframework:spock-spring:2.3-groovy-4.0'
+}
+
+group = 'com.allstate_onboarding'
+version = '0.0.1-SNAPSHOT'
+description = 'hostel_system_spock'
